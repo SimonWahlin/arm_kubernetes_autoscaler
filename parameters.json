@@ -1,0 +1,91 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "2.0.0.0",
+    "parameters": {
+        "resourceName": {
+            "value": "cpu"
+        },
+        "requesterID": {
+            "value": "mahesh"
+        },
+        "featureID": {
+            "value": "DS-130"
+        },
+        "minCount": {
+            "value": 1
+        },
+        "maxCount": {
+            "value": 3
+        },
+        "location": {
+            "value": "northeurope"
+        },
+        "dnsPrefix": {
+            "value": "explorecpu"
+        },
+        "osDiskSizeGB": {
+            "value": 512
+        },
+        "agentCount": {
+            "value": 1
+        },
+        "agentVMSize": {
+            "value": "Standard_D32s_v3"
+        },
+        "kubernetesVersion": {
+            "value": "1.12.6"
+        },
+        "enableHttpApplicationRouting": {
+            "value": false
+        },
+        "networkPlugin": {
+            "value": "azure"
+        },
+        "enableAutoScaling": {
+            "value": true
+        },
+        "maxPods": {
+            "value": 30
+        },
+        "enableRBAC": {
+            "value": true
+        },
+        "existingVirtualNetworkName": {
+            "value": "VNet"
+        },
+        "existingVirtualNetworkResourceGroup": {
+            "value": "<resourceGroupName>"
+        },
+        "existingSubnetName": {
+            "value": "Subnet_2"
+        },
+        "serviceCidr": {
+            "value": "10.0.0.0/16"
+        },
+        "dnsServiceIP": {
+            "value": "10.0.0.10"
+        },
+        "dockerBridgeCidr": {
+            "value": "172.17.0.1/16"
+        },
+        "osType": {
+            "value": "Linux"
+        },
+        "servicePrincipalClientId": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/<SubscriptionID>/resourceGroups/<resourceGroupName>/providers/Microsoft.KeyVault/vaults/<vaultName>"
+                },
+                "secretName": "servicePrincipalClientId"
+            }
+        },
+        "servicePrincipalClientSecret": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/<SubscriptionID>/resourceGroups/<resourceGroupName>/providers/Microsoft.KeyVault/vaults/<vaultName>"
+                },
+                "secretName": "servicePrincipalClientSecret"
+            }
+        }
+    }
+}
